@@ -961,3 +961,76 @@ print(medianSlidingWindow(nums, k))  # [1, -1, -1, 3, 5, 6]
 ## Quick Implementation Reference
 
 ### Custom Min Heap
+```python
+min_heap = MinHeap()
+min_heap.insert(5)
+val = min_heap.extract_min()
+top = min_heap.peek()
+```
+
+### Custom Max Heap
+```python
+max_heap = MaxHeap()
+max_heap.insert(5)
+val = max_heap.extract_max()
+top = max_heap.peek()
+```
+
+### heapq (Min Heap)
+```python
+import heapq
+
+heap = []
+heapq.heappush(heap, 5)
+val = heapq.heappop(heap)
+top = heap[0]
+```
+
+### heapq (Max Heap - Negate)
+```python
+import heapq
+
+heap = []
+heapq.heappush(heap, -5)  # Negate
+val = -heapq.heappop(heap)  # Negate back
+top = -heap[0]
+```
+
+### Build Heap
+```python
+# Custom
+heap = MinHeap()
+heap.build_heap([5, 3, 7, 1])
+
+# heapq
+arr = [5, 3, 7, 1]
+heapq.heapify(arr)
+```
+
+## Summary
+
+Priority Queue and Heap are fundamental data structures for efficiently managing elements by priority:
+
+**Key Characteristics:**
+- **Binary Heap** - Complete binary tree with heap property
+- **Min Heap** - Parent ≤ Children (smallest at root)
+- **Max Heap** - Parent ≥ Children (largest at root)
+- **Array-based** - Efficient storage using array indexing
+- **O(log n) operations** - Insert and extract
+- **O(1) peek** - Access to min/max element
+
+**Common Patterns:**
+1. **Top K Elements** - Use heap of size K
+2. **Merge K Sorted** - Use min heap with K elements
+3. **Two Heaps** - For median and streaming statistics
+4. **Scheduling** - Priority-based task execution
+5. **Graph Algorithms** - Dijkstra's, Prim's
+
+**Implementation Choices:**
+- **Learning:** Implement from scratch (MinHeap/MaxHeap classes)
+- **Production:** Use `heapq` for efficiency and reliability
+- **Max Heap with heapq:** Negate values (`-val`)
+
+**Key Takeaway:** Master both custom implementation (for understanding) and heapq usage (for solving problems efficiently). The two-heap pattern is especially powerful for streaming data problems!
+
+Practice these patterns and you'll handle priority-based problems with optimal time complexity!
