@@ -1037,11 +1037,41 @@ def subsets(nums):
     return result
 ```
 
-## Summary
 
-Backtracking is a powerful technique for exploring all possible solutions:
+# Backtracking Algorithm Guide
 
-**Key Characteristics:**
-- **Try all possibilities** - Exhaustive search
-- **Choose, Explore, Unchoose** - Core backtracking pattern
-- **Pruning** - Skip
+## Key Characteristics:
+* **Try all possibilities** - Exhaustive search
+* **Choose, Explore, Unchoose** - Core backtracking pattern
+* **Pruning** - Skip invalid paths early
+* **Recursive nature** - Natural fit for decision trees
+
+## Common Patterns:
+1. **Permutations** - n! arrangements, all elements used
+2. **Combinations** - Choose k from n, order doesn't matter
+3. **Subsets** - All possible selections (power set)
+4. **Partition** - Split into valid groups
+5. **Board games** - N-Queens, Sudoku
+6. **Path finding** - Word search, maze solving
+
+## Key Differences:
+
+| Type | Formula | Reuse? | Order? | Start Index |
+|------|---------|--------|--------|-------------|
+| Permutation | n! | No | Yes | Any |
+| Combination | C(n,k) | No | No | i+1 |
+| Subset | 2^n | No | No | i+1 |
+| Comb w/ Reuse | - | Yes | No | i |
+
+## Optimization Techniques:
+1. **Sort first** - Helps skip duplicates
+2. **Use sets** - O(1) validation checks
+3. **Prune early** - Check constraints before recursing
+4. **Memoization** - Cache results for overlapping subproblems
+5. **Bit manipulation** - For subsets generation
+6. **Mathematical properties** - Like diagonals in N-Queens
+
+## Key Takeaway:
+Backtracking is about systematically trying all possibilities while intelligently pruning invalid paths. Master the three templates (permutations, combinations, subsets) and you can solve most backtracking problems by adapting these patterns!
+
+Practice drawing decision trees to understand the backtracking process. Remember: **Choose → Explore → Unchoose!**
